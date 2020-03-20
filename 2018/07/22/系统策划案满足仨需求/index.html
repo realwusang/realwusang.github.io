@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>[笔记]系统策划案满足的三个需求 - realwusang</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="enjoy life">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="游戏系统策划案（满足玩家需求、游戏设计者、系统执行者）玩家需求  玩家追求的是更爽的高峰、心流体验和更低的游玩（认知，时间，金钱，操作等）成本。——《量体裁衣─基于玩家的项目设立与制作秘诀》曾宣凯   更低的游玩成本  认知成本降到最低  概念最少 逐渐开放学习内容   时间成本自适应  精简  最小化玩家单次消耗在此系统上的时间 加入新的对旧的做减法   系统自适应玩家每日可花费的时间  机器适">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[笔记]系统策划案满足的三个需求">
+<meta property="og:url" content="http://realwusang.github.io/blog/2018/07/22/%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88%E6%BB%A1%E8%B6%B3%E4%BB%A8%E9%9C%80%E6%B1%82/index.html">
+<meta property="og:site_name" content="realwusang">
+<meta property="og:description" content="游戏系统策划案（满足玩家需求、游戏设计者、系统执行者）玩家需求  玩家追求的是更爽的高峰、心流体验和更低的游玩（认知，时间，金钱，操作等）成本。——《量体裁衣─基于玩家的项目设立与制作秘诀》曾宣凯   更低的游玩成本  认知成本降到最低  概念最少 逐渐开放学习内容   时间成本自适应  精简  最小化玩家单次消耗在此系统上的时间 加入新的对旧的做减法   系统自适应玩家每日可花费的时间  机器适">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-07-22T10:32:30.000Z">
+<meta property="article:modified_time" content="2018-07-22T14:44:04.000Z">
+<meta property="article:author" content="realwusang">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1584723968375">-->
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="realwusang" class="mdui-btn mdui-btn-icon"><img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="realwusang">
+            <img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang" alt="realwusang">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>19</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/01/20/%E6%96%87%E6%A1%882/">[文案]文案2</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">[笔记]唐珊分享</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/22/ai%E7%AC%94%E8%AE%B0/">[笔记]游戏AI</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/22/%E6%B8%B8%E6%88%8F%E8%AF%95%E9%A2%98/">[试题]吉比特</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/21/%E5%B8%8C%E6%9C%9B%E4%B8%8D%E9%B8%BD/">[最终]broken</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 realwusang
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="[笔记]系统策划案满足的三个需求" class="lazyload">
+          <h1>[笔记]系统策划案满足的三个需求</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月22日</a>
+    <a><i class="nexmoefont icon-areachart"></i>475 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <h3 id="游戏系统策划案（满足玩家需求、游戏设计者、系统执行者）"><a href="#游戏系统策划案（满足玩家需求、游戏设计者、系统执行者）" class="headerlink" title="游戏系统策划案（满足玩家需求、游戏设计者、系统执行者）"></a>游戏系统策划案（满足玩家需求、游戏设计者、系统执行者）</h3><p><strong>玩家需求</strong></p>
+<blockquote>
+<p>玩家追求的是更爽的高峰、心流体验和更低的游玩（认知，时间，金钱，操作等）成本。<br>——《量体裁衣─基于玩家的项目设立与制作秘诀》曾宣凯</p>
+</blockquote>
+<ul>
+<li><p>更低的游玩成本</p>
+<ul>
+<li><p>认知成本降到最低</p>
+<ul>
+<li>概念最少</li>
+<li>逐渐开放学习内容</li>
+</ul>
+</li>
+<li><p>时间成本自适应</p>
+<ul>
+<li><p>精简</p>
+<ul>
+<li>最小化玩家单次消耗在此系统上的时间</li>
+<li>加入新的对旧的做减法</li>
+</ul>
+</li>
+<li><p>系统自适应玩家每日可花费的时间</p>
+<ul>
+<li>机器适应，根据玩家每日在线多长时间，而系统应该分配给他什么内容</li>
+<li>设计适应，设计的内容可玩的时间长度由玩家自身决定（比如：社交表达、家园装饰、悬赏令、无奖励切磋pk  等）</li>
+</ul>
+</li>
+<li><p>操作成本自适应</p>
+<ul>
+<li>可选：MOBA游戏；ARPG游戏《Dead Cells》中，玩家也是通过选择合适自身操作水准武器的方式，对游戏的操作难度进行适应。</li>
+<li>精简</li>
+<li>逐渐适应</li>
+</ul>
+</li>
+<li><p>核查对玩家的认知，设计要符合或者高出玩家预期</p>
+<blockquote>
+<p> 当预期与结果相同时，多巴胺的浓度不会变化；当结果高于预期，多巴胺浓度提升，使人兴奋和愉悦；当结果低于预期时，多巴胺浓度降低，从而促使人去环境中寻找新的奖励</p>
+</blockquote>
+</li>
+<li><p>建立不同玩家的对系统的预期假设，并模拟其角色状态和行为，便于以后通过反馈对假设的用户进行修正</p>
+</li>
+<li><p>信息搜集</p>
+</li>
+<li><p>参考同类型的产品</p>
+</li>
+<li><p>与公司内部对玩家认知较深的人交流</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>接下来的文章里写得很精简了<a href="http://www.gameres.com/805715.html" target="_blank" rel="noopener">游戏系统设计的要素有哪些？</a></p>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>realwusang<br>
+    <strong>Link：</strong><a href="http://realwusang.github.io/blog/2018/07/22/%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88%E6%BB%A1%E8%B6%B3%E4%BB%A8%E9%9C%80%E6%B1%82/" title="http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;22&#x2F;%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88%E6%BB%A1%E8%B6%B3%E4%BB%A8%E9%9C%80%E6%B1%82&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;22&#x2F;%E7%B3%BB%E7%BB%9F%E7%AD%96%E5%88%92%E6%A1%88%E6%BB%A1%E8%B6%B3%E4%BB%A8%E9%9C%80%E6%B1%82&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1584723968376"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+</body>
+
+</html>

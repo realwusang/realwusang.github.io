@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>[笔记]《游戏机制——高级游戏设计技术》第一章游戏机制 - realwusang</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="enjoy life">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="前言 如何设计、测试及调整游戏的核心机制  Machinations   使用它，你可以在自己的电脑上将游戏机制视觉化呈现出来，并模拟其运行效果，而且完全不用和代码以及电子表格打交道。  设计模式库   首次提炼出了游戏机制设计的本质：它是游戏经济的深层次结构，能够产生挑战和各种各样的反馈循环。   我们总结出了一批经典模式，涵盖多个类别，例如增长、阻力、渐增等引擎类模式，另外还阐述了如何令机制产">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[笔记]《游戏机制——高级游戏设计技术》第一章游戏机制">
+<meta property="og:url" content="http://realwusang.github.io/blog/2018/07/14/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
+<meta property="og:site_name" content="realwusang">
+<meta property="og:description" content="前言 如何设计、测试及调整游戏的核心机制  Machinations   使用它，你可以在自己的电脑上将游戏机制视觉化呈现出来，并模拟其运行效果，而且完全不用和代码以及电子表格打交道。  设计模式库   首次提炼出了游戏机制设计的本质：它是游戏经济的深层次结构，能够产生挑战和各种各样的反馈循环。   我们总结出了一批经典模式，涵盖多个类别，例如增长、阻力、渐增等引擎类模式，另外还阐述了如何令机制产">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180713203809.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180713203829.png?raw=true">
+<meta property="article:published_time" content="2018-07-14T15:20:30.000Z">
+<meta property="article:modified_time" content="2018-07-19T10:27:30.000Z">
+<meta property="article:author" content="realwusang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180713203809.png?raw=true">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1584723968391">-->
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="realwusang" class="mdui-btn mdui-btn-icon"><img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="realwusang">
+            <img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang" alt="realwusang">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>19</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/01/20/%E6%96%87%E6%A1%882/">[文案]文案2</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">[笔记]唐珊分享</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/22/ai%E7%AC%94%E8%AE%B0/">[笔记]游戏AI</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/22/%E6%B8%B8%E6%88%8F%E8%AF%95%E9%A2%98/">[试题]吉比特</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/21/%E5%B8%8C%E6%9C%9B%E4%B8%8D%E9%B8%BD/">[最终]broken</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 realwusang
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="[笔记]《游戏机制——高级游戏设计技术》第一章游戏机制" class="lazyload">
+          <h1>[笔记]《游戏机制——高级游戏设计技术》第一章游戏机制</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月14日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li><p>如何设计、测试及调整游戏的<strong>核心机制</strong></p>
+</li>
+<li><p>Machinations</p>
+</li>
+</ul>
+<p>使用它，你可以在自己的电脑上将游戏机制视觉化呈现出来，并模拟其运行效果，而且完全不用和代码以及电子表格打交道。</p>
+<ul>
+<li>设计模式库</li>
+</ul>
+<blockquote>
+<p>首次提炼出了游戏机制设计的本质：它是游戏经济的深层次结构，能够产生挑战和各种各样的反馈循环。</p>
+</blockquote>
+<blockquote>
+<p>我们总结出了一批经典模式，涵盖多个类别，例如增长、阻力、渐增等引擎类模式，另外还阐述了如何令机制产生出平稳循环、军备竞赛、交易系统等模式。</p>
+</blockquote>
+<p><em>在游戏设计中，<strong>游戏机制</strong>居于核心地位，是游戏核心部分的规则、流程以及数据。它们定义了玩游戏的活动如何进行、何时发生什么事、获胜和失败的条件是什么。</em></p>
+<ul>
+<li>本书目标是帮助你<strong>打造出能够产生出挑战丰富、乐趣十足、平衡良好的可玩性的机制。</strong></li>
+</ul>
+<hr>
+<h3 id="马克一下"><a href="#马克一下" class="headerlink" title="马克一下"></a>马克一下</h3><p><a href="www.peachpit.com/gamemechanics">设计模式库</a></p>
+<p><a href="www.peachpit.com/gamemechanics">Machinations入门指南</a></p>
+<p><a href="www.peachpit.com/gamemechanics">配套网站</a></p>
+<hr>
+<h1 id="第一章-设计游戏机制"><a href="#第一章-设计游戏机制" class="headerlink" title="第一章 设计游戏机制"></a>第一章 设计游戏机制</h1><p><strong>规则定义游戏</strong></p>
+<ul>
+<li><p>类比<strong>状态机</strong></p>
+<ul>
+<li>初始状态——玩家行为发展为不同状态——终止状态（比如人物死亡，时间结束等）</li>
+</ul>
+</li>
+<li><p>不可预测性</p>
+<ul>
+<li>偶然性、<strong>玩家选择</strong>以及<strong>复杂的规则</strong></li>
+</ul>
+</li>
+</ul>
+<p><em>玩家在这方面会有偏好差异</em></p>
+<p><strong>核心机制</strong></p>
+<p><strong>机制独立于媒介</strong></p>
+<p>节省时间，比如设计一个游戏的机制，再移植到不同媒介上。</p>
+<p><em>混合型游戏有多种媒介</em></p>
+<p><em>混合型游戏示例《Johann Sebastian Joust》</em><br><em>将身体运动和用计算机实现的简单机制结合起来</em></p>
+<blockquote>
+<p>在创建原型时，使用不同的媒介会有很大帮助。</p>
+</blockquote>
+<p><em>比如一般来说，编写软件比写一个桌上游戏规则所需的时间多得多。如果你的游戏做成桌上游戏或身体运动游戏一样能玩，那么用这些形式事先检验一下你的游戏规则和机制就是个不错的主意，以免你在电脑上实现它们时费力不讨好。</em></p>
+<blockquote>
+<p>高效的原型构建技术是游戏设计师的得力工具。</p>
+</blockquote>
+<h2 id="五种游戏机制（潜在关系）"><a href="#五种游戏机制（潜在关系）" class="headerlink" title="五种游戏机制（潜在关系）"></a>五种游戏机制（潜在关系）</h2><h3 id="物理（physics）"><a href="#物理（physics）" class="headerlink" title="物理（physics）"></a>物理（physics）</h3><p>决定物理特性，有些是修改了经典力学的“卡通物理”</p>
+<h3 id="内部经济（internal-economy）"><a href="#内部经济（internal-economy）" class="headerlink" title="内部经济（internal economy）"></a>内部经济（internal economy）</h3><p>游戏元素的收集、消费和交易<del>可量化、数值</del></p>
+<h3 id="渐进机制（progression-mechanisms）"><a href="#渐进机制（progression-mechanisms）" class="headerlink" title="渐进机制（progression mechanisms）"></a>渐进机制（progression mechanisms）</h3><p>控制游戏进度</p>
+<h3 id="战术机动（tactical-maneuvering）"><a href="#战术机动（tactical-maneuvering）" class="headerlink" title="战术机动（tactical maneuvering）"></a>战术机动（tactical maneuvering）</h3><p>这种机制使玩家可以将单位分配到地图上的特定位置，从而获得进攻或防守上的优势。战术机动机制通常明确规定了每种单位在每个可能的位置上具有何种战略意义。</p>
+<p><em>国际象棋、《星际争霸》（starcraft）、《命令与征服：红色警戒》（Command &amp; Conquer: Red Alert）</em></p>
+<h3 id="社交互动（social-interaction）"><a href="#社交互动（social-interaction）" class="headerlink" title="社交互动（social interaction）"></a>社交互动（social interaction）</h3><p>引导玩家之间进行交互</p>
+<hr>
+<p><del>看到一个好玩的哈哈</del></p>
+<blockquote>
+<p>角色扮演类游戏中可能会有规定角色应当如何进行表演的规则。</p>
+<blockquote>
+<p>例如，《魔兽世界》（World of Warcraft）等网络游戏会开设专用的“角色扮演”服务器，玩家在这类服务器中的言行举止必须严格遵守游戏的世界观和角色的种族、职业等身份设定，以求身临其境地融入游戏世界，达到如戏剧表演一样的效果。</p>
+</blockquote>
+</blockquote>
+<hr>
+<p><em>桌上游戏和孩子们玩的传统民间游戏</em></p>
+<h2 id="机制和游戏类型"><a href="#机制和游戏类型" class="headerlink" title="机制和游戏类型"></a>机制和游戏类型</h2><p>一个表格</p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180713203809.png?raw=true" alt="" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180713203829.png?raw=true" alt="" class="lazyload"></p>
+<h2 id="离散机制vs连续机制"><a href="#离散机制vs连续机制" class="headerlink" title="离散机制vs连续机制"></a>离散机制vs连续机制</h2><p>游戏<strong>物理机制</strong>和<strong>经济机制</strong>的这种区别，影响着游戏对媒介的依赖程度、玩家互动的本质，甚至设计师的创新机会。</p>
+<h2 id="将物理机制和策略性玩法相结合"><a href="#将物理机制和策略性玩法相结合" class="headerlink" title="将物理机制和策略性玩法相结合"></a>将物理机制和策略性玩法相结合</h2><p><em>愤怒的小鸟，粘粘世界</em></p>
+<h2 id="利用离散机制进行创新"><a href="#利用离散机制进行创新" class="headerlink" title="利用离散机制进行创新"></a>利用离散机制进行创新</h2><blockquote>
+<p>另一方面，每个设计师都希望做出独一无二的东西，很多第一人称射击游戏也确实实现了独特的增益道具系统或者收集并消费物品的经济系统，使得它们的可玩性与竞争者有所不同。</p>
+</blockquote>
+<h3 id="基于以玩家为中心的游戏开发过程"><a href="#基于以玩家为中心的游戏开发过程" class="headerlink" title="基于以玩家为中心的游戏开发过程"></a>基于以玩家为中心的游戏开发过程</h3><h2 id="游戏设计流程"><a href="#游戏设计流程" class="headerlink" title="游戏设计流程"></a>游戏设计流程</h2><ul>
+<li>概念设计阶段</li>
+</ul>
+<p>设计团队会决定游戏的总体概念、目标受众以及玩家所扮演的角色。</p>
+<p>在概念设计阶段，如果你不确定想要做哪种游戏的话，可以非常快速地为游戏的基本机制开发一个试验性版本，看看它是否能产生有趣的可玩性。（次抛型）</p>
+<ul>
+<li>详细设计阶段</li>
+</ul>
+<p>创建游戏机制和关卡、撰写故事情节、制作美术资源。</p>
+<p>开发团队在这个阶段保持短期的迭代开发循环是至关重要的。</p>
+<p>内测</p>
+<ul>
+<li>调整阶段</li>
+</ul>
+<p>减法过程，时间长</p>
+<hr>
+<ul>
+<li>设计文档<em>用于在游戏开发期间记录下设计</em></li>
+</ul>
+<p><strong>开头</strong>：简要阐述游戏概念、目标受众、核心机制和预期的美术风格</p>
+<p><strong>记录设计过程</strong>：目标和期望，设计决定</p>
+<p><strong>团队</strong>：明确说明了集体目标的文档</p>
+<p><strong>马克</strong>：《Fundamentals of Game Design》</p>
+<hr>
+<ul>
+<li><p>游戏机制尽早设计</p>
+<ul>
+<li>制作原型</li>
+<li>可玩性建立在游戏机制平衡上，后期最好不要加入新元素破坏平衡</li>
+</ul>
+</li>
+</ul>
+<p>核心机制——&gt;制作关卡+美术资源</p>
+<p><a href="www.youtube.com/watch?v=aW6vgW8wc6c">设计最小原型视频</a></p>
+<ul>
+<li><p>原型技术</p>
+<ul>
+<li>软件原型（software prototype）</li>
+<li>纸面原型（paper prototype）</li>
+<li>物理原型（physical prototype）</li>
+</ul>
+</li>
+</ul>
+<p><del>术语</del></p>
+<p><del>高保真原型、低保真原型、垂直分片、水平分片。</del></p>
+<p>成功的<strong>软件原型</strong>的关键特性之一是允许设计师在原型内部方便地对游戏进行调整。</p>
+<p><a href="www.spore.com/comm/prototypes">《孢子》的开发原型</a></p>
+<p>一个原型通常用于放大游戏的某个特定方面。</p>
+<p>物理原型好玩w</p>
+<p><a href="http://larp.meetup.com" target="_blank" rel="noopener">LARP（实况角色扮演游戏）</a></p>
+<p>为原型选择正确的聚焦点</p>
+<h3 id="原型聚焦点（早——-gt-后期）"><a href="#原型聚焦点（早——-gt-后期）" class="headerlink" title="原型聚焦点（早——&gt;后期）"></a>原型聚焦点（早——&gt;后期）</h3><p><strong>技术演示</strong>（tech demos）</p>
+<p>尝试挑战技术中最困难和陌生的部分。不要放弃制作时想出来的新点子。</p>
+<p><strong>游戏经济</strong>（game economy）</p>
+<p>低保真的纸面原型；资深玩家的蹂躏。</p>
+<p><em>游戏是否平衡？是否有无敌的统治性策略？能否为玩家提供有趣的选择？玩家是否能充分预见选择所带来的后果？</em></p>
+<p><strong>界面和操作方案（interface and control scheme）</strong></p>
+<p><em>玩家是否能正确地执行游戏中已提供的操作？他们有没有其他想要或需要的游戏操作方法？你是否提供了必要的信息供他们作出正确的决定？操作方案是否直观？玩家是否拥有玩<br>这个游戏所必备的信息？他们是否注意到游戏角色正在受到伤害，或者游戏是否已经转变到一个关键性阶段？</em></p>
+<p><strong>教程（tutorials）</strong></p>
+<p>找小白</p>
+<p>玩家是否理解游戏，并知道这个游戏应该怎样玩。</p>
+<p>免费原型：参考游戏</p>
+<h2 id="练习（马克）"><a href="#练习（马克）" class="headerlink" title="练习（马克）"></a>练习（马克）</h2><p>1．训练你的原型构建能力。把一个已有的电子游戏改编为纸面原型。</p>
+<p>2．为你想要制作的游戏选择一个合适的参考对象，并解释此参考游戏的哪些地方有助于说明你要做的游戏是什么样子。</p>
+<p>3．本章阐述了五种游戏机制（物理、内部经济、渐进、战术机动、社交互动。请在一个已发行的游戏中为以上每种机制找出离散机制和连续机制的例子，不要使用本章中已经给出的任何案例。</p>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>realwusang<br>
+    <strong>Link：</strong><a href="http://realwusang.github.io/blog/2018/07/14/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;14&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;14&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1584723968392"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+</body>
+
+</html>

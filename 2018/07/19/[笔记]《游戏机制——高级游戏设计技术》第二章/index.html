@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>[笔记]《游戏机制——高级游戏设计技术》第二章突现和渐进 - realwusang</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="enjoy life">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="渐进型游戏——渐进机制 其它四种机制统称为突现型游戏 突现型《half real》书籍 相对简单的构成元素组成复杂的机制 概率空间  游戏具有很多状态 当前状态可以产生出很多其它状态   《文明》  一个优秀的突现型游戏范例。简单的游戏元素，离散的机制，庞大的概率空间，几乎一切事物都相关联。这意味着你做出的选择会产生各种效应，而且有时候它们是无法预见的。     让所有元素尽量简单，但又在各元素里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[笔记]《游戏机制——高级游戏设计技术》第二章突现和渐进">
+<meta property="og:url" content="http://realwusang.github.io/blog/2018/07/19/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:site_name" content="realwusang">
+<meta property="og:description" content="渐进型游戏——渐进机制 其它四种机制统称为突现型游戏 突现型《half real》书籍 相对简单的构成元素组成复杂的机制 概率空间  游戏具有很多状态 当前状态可以产生出很多其它状态   《文明》  一个优秀的突现型游戏范例。简单的游戏元素，离散的机制，庞大的概率空间，几乎一切事物都相关联。这意味着你做出的选择会产生各种效应，而且有时候它们是无法预见的。     让所有元素尽量简单，但又在各元素里">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180720204700.png?raw=true">
+<meta property="article:published_time" content="2018-07-19T10:32:30.000Z">
+<meta property="article:modified_time" content="2018-07-20T13:16:44.000Z">
+<meta property="article:author" content="realwusang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180720204700.png?raw=true">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1584723968386">-->
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="realwusang" class="mdui-btn mdui-btn-icon"><img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="realwusang">
+            <img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang" alt="realwusang">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>19</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/01/20/%E6%96%87%E6%A1%882/">[文案]文案2</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">[笔记]唐珊分享</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/22/ai%E7%AC%94%E8%AE%B0/">[笔记]游戏AI</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/22/%E6%B8%B8%E6%88%8F%E8%AF%95%E9%A2%98/">[试题]吉比特</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/21/%E5%B8%8C%E6%9C%9B%E4%B8%8D%E9%B8%BD/">[最终]broken</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 realwusang
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="[笔记]《游戏机制——高级游戏设计技术》第二章突现和渐进" class="lazyload">
+          <h1>[笔记]《游戏机制——高级游戏设计技术》第二章突现和渐进</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月19日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p><strong>渐进型游戏</strong>——渐进机制</p>
+<p>其它四种机制统称为<strong>突现型游戏</strong></p>
+<h2 id="突现型"><a href="#突现型" class="headerlink" title="突现型"></a>突现型</h2><p>《half real》书籍</p>
+<p>相对简单的构成元素组成复杂的机制</p>
+<p><strong>概率空间</strong></p>
+<ul>
+<li>游戏具有很多状态</li>
+<li>当前状态可以产生出很多其它状态</li>
+</ul>
+<blockquote>
+<p><strong>《文明》</strong></p>
+<blockquote>
+<p>一个优秀的突现型游戏范例。简单的游戏元素，离散的机制，庞大的概率空间，几乎一切事物都相关联。这意味着你做出的选择会产生各种效应，而且有时候它们是无法预见的。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><em>让所有元素尽量简单，但又在各元素里建立联系</em>（保证游戏复杂度，但无法担保生发出有趣的玩法）。为正确处理这个问题，你需要观察这些机制的结构。有的结构能产生出比其他结构更多的突现特性。</p>
+</blockquote>
+</blockquote>
+<p>一个好的游戏结构<strong>反馈循环</strong></p>
+<h2 id="渐进型"><a href="#渐进型" class="headerlink" title="渐进型"></a>渐进型</h2><p>关卡，交互式故事</p>
+<p>故事背景</p>
+<p>在游戏中叙述故事——真正为游戏服务的完整故事</p>
+<p>设计师利用渐进性机制指定<strong>玩家首先遇到哪些游戏元素、拥有哪些初始资源、为了过关必须完成哪些任务等。</strong></p>
+<p>决定游戏里玩家能力、关卡布局（关键性道具的位置）<em>控制进度</em></p>
+<p>体验故事——关卡中发生的事件、玩家找到的线索、特定位置触发的剧情动画等。</p>
+<h3 id="游戏教程"><a href="#游戏教程" class="headerlink" title="游戏教程"></a>游戏教程</h3><p>无后果、安全、实践</p>
+<blockquote>
+<p>叙事架构：着重于空间的叙事技巧。</p>
+</blockquote>
+<p>使用教程和设计好的关卡来训练玩家的游戏技巧。</p>
+<p>游戏——空间性故事</p>
+<h3 id="游戏中的叙事"><a href="#游戏中的叙事" class="headerlink" title="游戏中的叙事"></a>游戏中的叙事</h3><p><strong>轨道引导</strong>：指定的游戏路线，虚假的自由度</p>
+<p><em>给予玩家高自由度还是关卡限制自由度？</em>把握平衡。</p>
+<blockquote>
+<p><strong>《塞尔达传说》</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>如“森之神殿”关卡，主线任务按顺序+为达成主线任务的完成条件所要进行的支线任务没有顺序。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>关卡的瓶颈设计</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>游戏空间遵循辐射式布局——</p>
+<blockquote>
+<p>以一个中央房间作为辐射中心和起点，玩家由此开始探索延伸出的各个子区域。此布局的优势在于能让玩家自主选择任务的先后顺序，中心区域也是设置存档点或地下城入口的良好地点，此外，此布局还能最大程度地减少玩家重复路过同一区域的情况。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>锁——钥匙机制：如果一个关卡任务中有着很强的先后关联条件，就可用此机制将这些条件转化为空间性结构，通过若干个小任务将它们的关联性体现出来。疾风回旋镖既是武器，也是多种场合的开锁道具。</p>
+</blockquote>
+</blockquote>
+<p>慎重规划。物理布局，道具位置，学习技巧，克服挑战。</p>
+<p>规则间相互联系——复杂度——规则复杂度超过某一点后玩法复杂度激增——复杂度屏障——概率空间激增——提高游戏重玩价值。</p>
+<p>突现型游戏概率空间大而宽广，渐进型概率空间小但深。</p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180720204700.png?raw=true" alt="" class="lazyload"></p>
+<h2 id="将突现和渐进结合"><a href="#将突现和渐进结合" class="headerlink" title="将突现和渐进结合"></a>将突现和渐进结合</h2><p>自由和开放的突现型玩法+叙事出色的渐进式体验</p>
+<p><strong>《侠盗猎车手》</strong>突现和渐进交替使用</p>
+<hr>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>国际象棋通常被看作有三个阶段：开局、中盘和末盘，然而在整局游戏中，规则却从未发生过变化。这种现象是由规则自身的突现特性引起的，而不是由人为设定的渐进型机制所造成的。</p>
+<ol>
+<li><p>举出另一个在进行过程中会产生不同玩法阶段的游戏作品（电子游戏和桌上游戏均可）</p>
+</li>
+<li><p>是什么引发了这种现象？</p>
+</li>
+<li><p>这些不同阶段是真正以突现形式生发出来的，还是仅仅是预先设计的故事情节或人为设置好的触发器所引发的结果？</p>
+</li>
+</ol>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>realwusang<br>
+    <strong>Link：</strong><a href="http://realwusang.github.io/blog/2018/07/19/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;19&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;19&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1584723968388"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+</body>
+
+</html>

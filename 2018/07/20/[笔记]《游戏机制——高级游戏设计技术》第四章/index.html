@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>[笔记]《游戏机制——高级游戏设计技术》第四章内部经济 - realwusang</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="enjoy life">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="资源  资源是指任何能用数字来衡量的概念。 实体储存资源的具体数目（储存变量），仅储存一个数值的实体称为简单实体，若干个相互关联的简单实体的集合称为复合实体。如游戏里的各种属性分别是不同的简单实体，组合成复合实体。 经济系统中的四个功能四个影响并转移资源的功能  来源（凭空产生新资源） 消耗器（永久消除） 转换器（性质改变） 交易器（性质不变）  从机制到走势图 负反馈引发均衡  有些系统会有不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[笔记]《游戏机制——高级游戏设计技术》第四章内部经济">
+<meta property="og:url" content="http://realwusang.github.io/blog/2018/07/20/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:site_name" content="realwusang">
+<meta property="og:description" content="资源  资源是指任何能用数字来衡量的概念。 实体储存资源的具体数目（储存变量），仅储存一个数值的实体称为简单实体，若干个相互关联的简单实体的集合称为复合实体。如游戏里的各种属性分别是不同的简单实体，组合成复合实体。 经济系统中的四个功能四个影响并转移资源的功能  来源（凭空产生新资源） 消耗器（永久消除） 转换器（性质改变） 交易器（性质不变）  从机制到走势图 负反馈引发均衡  有些系统会有不">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-07-20T10:40:30.000Z">
+<meta property="article:modified_time" content="2018-07-23T06:40:14.000Z">
+<meta property="article:author" content="realwusang">
+<meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1584723968382">-->
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="realwusang" class="mdui-btn mdui-btn-icon"><img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="realwusang">
+            <img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang" alt="realwusang">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>19</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/01/20/%E6%96%87%E6%A1%882/">[文案]文案2</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">[笔记]唐珊分享</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/22/ai%E7%AC%94%E8%AE%B0/">[笔记]游戏AI</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/22/%E6%B8%B8%E6%88%8F%E8%AF%95%E9%A2%98/">[试题]吉比特</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/21/%E5%B8%8C%E6%9C%9B%E4%B8%8D%E9%B8%BD/">[最终]broken</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 realwusang
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="[笔记]《游戏机制——高级游戏设计技术》第四章内部经济" class="lazyload">
+          <h1>[笔记]《游戏机制——高级游戏设计技术》第四章内部经济</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <ul>
+<li><strong>资源</strong></li>
+</ul>
+<p>资源是指任何能用数字来衡量的概念。</p>
+<p><strong>实体</strong>储存资源的具体数目（储存变量），仅储存一个数值的实体称为<strong>简单实体</strong>，若干个相互关联的简单实体的集合称为<strong>复合实体</strong>。<em>如游戏里的各种属性分别是不同的简单实体，组合成复合实体。</em></p>
+<h2 id="经济系统中的四个功能"><a href="#经济系统中的四个功能" class="headerlink" title="经济系统中的四个功能"></a>经济系统中的四个功能</h2><p>四个影响并转移资源的功能</p>
+<ul>
+<li>来源（凭空产生新资源）</li>
+<li>消耗器（永久消除）</li>
+<li>转换器（性质改变）</li>
+<li>交易器（性质不变）</li>
+</ul>
+<h3 id="从机制到走势图"><a href="#从机制到走势图" class="headerlink" title="从机制到走势图"></a>从机制到走势图</h3><ul>
+<li><strong>负反馈引发均衡</strong></li>
+</ul>
+<p>有些系统会有不同的均衡，比如最简单的均衡是一条直线，境遇在此直线上下波动。还有周期性的均衡或逐渐上升的均衡。</p>
+<p>改变均衡需要有一个动态因素，这个因素不受负反馈机制的影响。</p>
+<ul>
+<li><strong>正反馈引发军备竞赛</strong></li>
+</ul>
+<p>指数曲线、利滚利</p>
+<blockquote>
+<blockquote>
+<p>星际争霸</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>SCV和采矿，SCV越多采矿速率越快，SCV需要矿资源来建造，<strong>相互依赖</strong>，若两者都没了则出现<strong>锁死</strong>状态。SCV的数量必存在一个平衡点使玩家停止建造SCV转而建造其他建筑。由此产生两种基本策略：快攻或屯资源。</p>
+</blockquote>
+<blockquote>
+<p>星际争霸还有点就是矿脉离主基地的距离，它所在的位置对采矿速率有影响。这就要求玩家的游戏技巧。</p>
+</blockquote>
+<ul>
+<li><strong>基于分数差距的反馈</strong></li>
+</ul>
+<p>产生动态均衡的好方法：让负反馈循环的均衡依赖于多名玩家的境遇差异或游戏中的其他因素。</p>
+<ul>
+<li><strong>皮筋约束：基于相对位置的负反馈</strong></li>
+</ul>
+<p>比如赛道上前后赛车，领先的赛车速度就会慢一些。在《马里奥赛车》中，落后的赛车更容易拾得强力道具。</p>
+<h2 id="内部经济在游戏中的应用"><a href="#内部经济在游戏中的应用" class="headerlink" title="内部经济在游戏中的应用"></a>内部经济在游戏中的应用</h2><ul>
+<li><strong>用内部经济补强物理机制</strong></li>
+</ul>
+<p>补给资源，奖励玩家</p>
+<ul>
+<li><strong>用内部经济影响游戏进程</strong></li>
+</ul>
+<p>技能可看做一种新型资源，假定它们能产生一种叫<strong>路径</strong>的抽象资源。路径可作为获取额外奖励的途径，或推动游戏进程的必要条件。（留意死锁条件）</p>
+<blockquote>
+<blockquote>
+<p>塞尔达游戏中避免死锁的方法</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>让资源不断再生，总是会有神秘的罐子，打破了获得资源，第二次见时又是好的。</p>
+</blockquote>
+<ul>
+<li><strong>通过内部经济引入策略性玩法</strong></li>
+</ul>
+<p>要为一个时间跨度比大多数物理动作类和战术动作类游戏都要大的游戏引入策略性玩法的话，加入内部经济机制是一个好方法。</p>
+<p>策划师很难在各种机制中找到平衡，即使是《星际争霸》这样的老游戏维护也一直在进行。</p>
+<ul>
+<li><strong>用内部经济创造出大概率空间</strong></li>
+</ul>
+<p><strong>三点需要注意的地方</strong></p>
+<ol>
+<li>在一个在线角色扮演游戏中，如果一个装备方案具有其他方案无法追赶的优越性时，那么这个方案就会在玩家中快速传播，从此玩家只用这一种方案的话就会大大降低游戏的概率空间。<strong>在这种情况下，利用某些形式的负反馈来平衡这些玩家自定义方案是最好的方法</strong>。<em>比如每升一级就要更多的经验值。</em></li>
+<li><strong>保证概率空间足够大。</strong></li>
+</ol>
+<p>要使游戏的选择真正具有价值，一个好方法是使不同选择之间互斥。<br>比如《杀出重围》中玩家选择如何改造生化人主角。不同选择有不同玩法。</p>
+<ol start="3">
+<li>理想来说，设计关卡时应当让玩家<strong>能用多种方法过关。</strong></li>
+</ol>
+<h3 id="经济构建型游戏"><a href="#经济构建型游戏" class="headerlink" title="经济构建型游戏"></a>经济构建型游戏</h3><p><em>《模拟城市》</em></p>
+<ul>
+<li><strong>不要一次性把所有的经济构件都提供给玩家</strong></li>
+<li><strong>留意超经济结构</strong></li>
+</ul>
+<p>为避免统治性策略产生过大影响，可以采用一种困难但有效的方法：让这些策略产生的效果随着游戏的进行而逐渐降低。<em>例如，某种区域规划方案在游戏早期可以有效地增加人口，但在游戏发展到后期时会造成严重污染。</em></p>
+<p><em>利用运转缓慢的破坏性正反馈机制</em></p>
+<p><em>统治性超经济结构</em></p>
+<ul>
+<li><strong>利用地图产生变化性并限制概率空间</strong></li>
+</ul>
+<p><em>《文明》地形、《模拟城市》灾难模式</em></p>
+<hr>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><ol>
+<li>选择一个已发行的游戏，分析这个游戏中有哪些资源，其经济机制起到了哪些作用。</li>
+<li>本章阐述了一些重要特性：具有周期均衡特征的负反馈、下行螺旋、短期收益和长期投资之间的平衡、基于玩家间分数差距的反馈、皮筋约束。举出一个拥有上述特性之一的游戏，分析这种特性在该游戏中涉及哪些资源，并说明游戏机制是如何产生出这种特性的。</li>
+<li>举出一个可能出现死锁局面的游戏，并阐述此游戏是否提供了打破死锁局面的方法。</li>
+</ol>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>realwusang<br>
+    <strong>Link：</strong><a href="http://realwusang.github.io/blog/2018/07/20/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0/" title="http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;20&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;20&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1584723968383"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+</body>
+
+</html>

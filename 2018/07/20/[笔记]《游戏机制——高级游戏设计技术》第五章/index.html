@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>[笔记]《游戏机制——高级游戏设计技术》第五章Machinations - realwusang</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="enjoy life">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="啊……我需要VPN 将游戏机制图形化、规范化地表现出来。 此框架可帮助设计师和学习游戏设计的学生构建、记录、模拟和测试游戏的内部经济。核心是Machinations示意图，可将游戏内部经济可视化地呈现出来。 绘制示意图及实时模拟其运行效果的在线工具 Machinations框架  为了模拟游戏的内部经济，Machinations示意图使用了各种各样的节点来推送、牵引、积聚和分配资源。资源通路决定了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[笔记]《游戏机制——高级游戏设计技术》第五章Machinations">
+<meta property="og:url" content="http://realwusang.github.io/blog/2018/07/20/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0/index.html">
+<meta property="og:site_name" content="realwusang">
+<meta property="og:description" content="啊……我需要VPN 将游戏机制图形化、规范化地表现出来。 此框架可帮助设计师和学习游戏设计的学生构建、记录、模拟和测试游戏的内部经济。核心是Machinations示意图，可将游戏内部经济可视化地呈现出来。 绘制示意图及实时模拟其运行效果的在线工具 Machinations框架  为了模拟游戏的内部经济，Machinations示意图使用了各种各样的节点来推送、牵引、积聚和分配资源。资源通路决定了">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722175921.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722182940.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722183504.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722184558.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722184608.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722190506.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722190828.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722191325.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722194212.png?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722194220.png?raw=true">
+<meta property="article:published_time" content="2018-07-20T10:50:31.000Z">
+<meta property="article:modified_time" content="2018-07-23T06:43:30.000Z">
+<meta property="article:author" content="realwusang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722175921.png?raw=true">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/blog/css/style.css?v=1584723968380">-->
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/blog/" title="realwusang" class="mdui-btn mdui-btn-icon"><img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/blog/" title="realwusang">
+            <img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang" alt="realwusang">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>19</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/blog/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  
+
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/01/20/%E6%96%87%E6%A1%882/">[文案]文案2</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">[笔记]唐珊分享</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/22/ai%E7%AC%94%E8%AE%B0/">[笔记]游戏AI</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/22/%E6%B8%B8%E6%88%8F%E8%AF%95%E9%A2%98/">[试题]吉比特</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/08/21/%E5%B8%8C%E6%9C%9B%E4%B8%8D%E9%B8%BD/">[最终]broken</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 realwusang
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="[笔记]《游戏机制——高级游戏设计技术》第五章Machinations" class="lazyload">
+          <h1>[笔记]《游戏机制——高级游戏设计技术》第五章Machinations</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月20日</a>
+    <a><i class="nexmoefont icon-areachart"></i>784 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>啊……我需要VPN</p>
+<p>将游戏机制图形化、规范化地表现出来。</p>
+<p>此框架可帮助设计师和学习游戏设计的学生构建、记录、模拟和测试游戏的内部经济。核心是<strong>Machinations示意图</strong>，可将游戏内部经济可视化地呈现出来。</p>
+<p><a href="www.jorisdormans.nl/machinations">绘制示意图及实时模拟其运行效果的在线工具</a></p>
+<p><strong>Machinations框架</strong></p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722175921.png?raw=true" alt="" class="lazyload"></p>
+<p>为了模拟游戏的内部经济，Machinations示意图使用了各种各样的<strong>节点</strong>来<strong>推送、牵引、积聚和分配</strong>资源。<strong>资源通路</strong>决定了资源如何在各元件之间进行流动，<strong>状态通路</strong>决定了资源当前的分配情况如何对示意图中的其他元件产生影响。</p>
+<ul>
+<li><strong>池</strong>（节点的一种）</li>
+</ul>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722182940.png?raw=true" alt="" class="lazyload"></p>
+<p>池是积聚资源的地方。可以用来代表实体。只能储存整数。</p>
+<p>在Display Limit里设置小圆数量值。超出这一值则池内显示数字。</p>
+<ul>
+<li><strong>资源通路</strong></li>
+</ul>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722183504.png?raw=true" alt="" class="lazyload"></p>
+<p>以不同的速率转移<strong>资源</strong>，默认速率为1</p>
+<p>调整速率：选中该条资源通路，在侧边栏的Label一栏中输入所需数值或其他。</p>
+<p>一个时间步长转移所有的资源写all</p>
+<p>输入端——节点——输出端</p>
+<p>源头——目标</p>
+<p>不想要资源流通的动画时在侧边栏Run中找到Quick Run.</p>
+<p>输入<strong><em>D</em></strong>产生随机流动速率。设置成功后，相应资源通路的箭头下方会出现一个骰子符号。<em>D6代表掷出一枚六面骰所产生的随机数，D6+3表示在上述结果上+3所得的数字，2D6则代表掷出两枚六面骰后相加的数字。以此类推。</em></p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722184558.png?raw=true" alt="" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722184608.png?raw=true" alt="" class="lazyload"></p>
+<h3 id="激活模式"><a href="#激活模式" class="headerlink" title="激活模式"></a>激活模式</h3><p>节点在<strong>激活模式</strong>下<strong>启动</strong>，沿着相连的资源通路推送或牵引资源。</p>
+<ul>
+<li><p><strong>激活模式</strong></p>
+<ul>
+<li><p>自动激活</p>
+<p>每次迭代自动启动，所有节点同时启动</p>
+</li>
+<li><p>交互激活</p>
+<p>可代表一种玩家行动。对玩家行动作出反应。交互</p>
+</li>
+</ul>
+<p>点击</p>
+<ul>
+<li><p>前导激活</p>
+<p>第一次迭代开始前启动，仅启动这一次   </p>
+<p>点击Run</p>
+</li>
+<li><p>被动激活</p>
+<p>只能通过其他元件生成的触发器来启动</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722190506.png?raw=true" alt="" class="lazyload"></p>
+<h3 id="资源的推送和牵引"><a href="#资源的推送和牵引" class="headerlink" title="资源的推送和牵引"></a>资源的推送和牵引</h3><p>当一个池启动时，它会尝试从所有与之相连的输入端牵引资源。当池出于推送模式时会向所有相连的输出端推送资源。</p>
+<p>操作资源的数目取决于通路设置的资源流动速率。</p>
+<p>如果一个池需求大于获得，俩解决方案：</p>
+<ol>
+<li>默认pull any模式牵引最多的资源，上限为资源流动速率。</li>
+<li>pull all模式，剩余资源不足，节点不会牵引资源。</li>
+</ol>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722190828.png?raw=true" alt="" class="lazyload"></p>
+<p>推送模式同理</p>
+<blockquote>
+<p>沙漏模型<br><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722191325.png?raw=true" alt="" class="lazyload"></p>
+</blockquote>
+<p><strong>同步/异步时间模式</strong></p>
+<p><strong>回合制模式</strong>：通过行动点数来实现，每点击一个交互式节点都会消耗相应点数。</p>
+<p>Time Mode时间模式下拉菜单（未选择任何元件）<br>Interval间隔值，以秒为单位</p>
+<p>回合制时Interval变成Actions/Turn</p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722194212.png?raw=true" alt="" class="lazyload"></p>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/QQ%E6%88%AA%E5%9B%BE20180722194220.png?raw=true" alt="" class="lazyload"></p>
+<h3 id="状态通路（虚线）"><a href="#状态通路（虚线）" class="headerlink" title="状态通路（虚线）"></a><strong>状态通路</strong>（虚线）</h3><p><strong>标签修改器</strong></p>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>realwusang<br>
+    <strong>Link：</strong><a href="http://realwusang.github.io/blog/2018/07/20/[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0/" title="http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;20&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;realwusang.github.io&#x2F;blog&#x2F;2018&#x2F;07&#x2F;20&#x2F;[%E7%AC%94%E8%AE%B0]%E3%80%8A%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%E2%80%94%E2%80%94%E9%AB%98%E7%BA%A7%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/blog/js/app.js?v=1584723968382"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+</body>
+
+</html>
