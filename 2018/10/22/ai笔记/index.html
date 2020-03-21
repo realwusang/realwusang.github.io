@@ -4,28 +4,28 @@
 
 <head>
   
-  <title>[笔记]游戏AI - realwusang</title>
+  <title>游戏开发中的人工智能part1 - realwusang</title>
   <meta charset="UTF-8">
   <meta name="description" content="enjoy life">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="游戏AI策划定性AI 行为或表现是特定的，而且可以预测的，没有不确定性。具体实例可以是简单的追逐算法。比如说塑造一个怪物角色，沿着 XY 坐标轴前进，往某目标点移动，直到该角色的 XY 坐标和目标点的坐标重叠。 非定性AI 某种程度的不确定性，有点不可预测（不确定到什么程度与人们对所采用的的 AI 的方法的理解的难易程度有关）。具体实例是让非玩家角色学习到适应玩家的作战战术。这样的学习能力可以利用">
+  <meta name="description" content="定性AI 行为或表现是特定的，而且可以预测的，没有不确定性。具体实例可以是简单的追逐算法。比如说塑造一个怪物角色，沿着 XY 坐标轴前进，往某目标点移动，直到该角色的 XY 坐标和目标点的坐标重叠。 非定性AI 某种程度的不确定性，有点不可预测（不确定到什么程度与人们对所采用的的 AI 的方法的理解的难易程度有关）。具体实例是让非玩家角色学习到适应玩家的作战战术。这样的学习能力可以利用神经网络、贝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[笔记]游戏AI">
+<meta property="og:title" content="游戏开发中的人工智能part1">
 <meta property="og:url" content="http://realwusang.github.io/2018/10/22/ai%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="realwusang">
-<meta property="og:description" content="游戏AI策划定性AI 行为或表现是特定的，而且可以预测的，没有不确定性。具体实例可以是简单的追逐算法。比如说塑造一个怪物角色，沿着 XY 坐标轴前进，往某目标点移动，直到该角色的 XY 坐标和目标点的坐标重叠。 非定性AI 某种程度的不确定性，有点不可预测（不确定到什么程度与人们对所采用的的 AI 的方法的理解的难易程度有关）。具体实例是让非玩家角色学习到适应玩家的作战战术。这样的学习能力可以利用">
+<meta property="og:description" content="定性AI 行为或表现是特定的，而且可以预测的，没有不确定性。具体实例可以是简单的追逐算法。比如说塑造一个怪物角色，沿着 XY 坐标轴前进，往某目标点移动，直到该角色的 XY 坐标和目标点的坐标重叠。 非定性AI 某种程度的不确定性，有点不可预测（不确定到什么程度与人们对所采用的的 AI 的方法的理解的难易程度有关）。具体实例是让非玩家角色学习到适应玩家的作战战术。这样的学习能力可以利用神经网络、贝">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdn.net/20170718132150961?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvSnVyYm8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="article:published_time" content="2018-10-22T08:32:30.000Z">
-<meta property="article:modified_time" content="2020-03-21T07:49:18.872Z">
+<meta property="article:modified_time" content="2020-03-21T14:09:11.663Z">
 <meta property="article:author" content="realwusang">
 <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20170718132150961?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvSnVyYm8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
   
-  <!--<link rel="stylesheet" href="/css/style.css?v=1584779226000">-->
+  <!--<link rel="stylesheet" href="/css/style.css?v=1584800818142">-->
 
   
 <meta name="generator" content="Hexo 4.2.0"></head>
@@ -50,7 +50,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>Articles</span>19</div>
+        <div><span>Articles</span>21</div>
         <div><span>Tags</span>6</div>
         <div><span>Categories</span>7</div>
     </div>
@@ -125,7 +125,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/笔记/">笔记</a>
-          <span class="category-list-count">3</span>
+          <span class="category-list-count">2</span>
         </li>
 
         
@@ -139,7 +139,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/读书笔记/">读书笔记</a>
-          <span class="category-list-count">5</span>
+          <span class="category-list-count">8</span>
         </li>
 
         
@@ -154,7 +154,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">Tag Cloud</h3>
     <div id="randomtagcloud" class="nexmoe-widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 13.33px;">AI</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" style="font-size: 20px;">游戏机制</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E5%88%92/" style="font-size: 10px;">游戏策划</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 13.33px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E8%AF%84%E6%B5%8B/" style="font-size: 16.67px;">游戏评测</a> <a href="/tags/%E8%AF%95%E9%A2%98/" style="font-size: 10px;">试题</a>
+      <a href="/tags/AI/" style="font-size: 16.67px;">AI</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" style="font-size: 20px;">游戏机制</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E5%88%92/" style="font-size: 10px;">游戏策划</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 13.33px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E8%AF%84%E6%B5%8B/" style="font-size: 16.67px;">游戏评测</a> <a href="/tags/%E8%AF%95%E9%A2%98/" style="font-size: 10px;">试题</a>
     </div>
     
   </div>
@@ -167,23 +167,23 @@
       <ul>
         
           <li>
-            <a href="/2019/01/20/%E6%96%87%E6%A1%882/">[文案]文案2</a>
+            <a href="/2089/01/20/%E9%A6%96%E9%A1%B5%E9%80%9A%E7%9F%A5%E4%B9%A6/">永 远 在 首 页</a>
           </li>
         
           <li>
-            <a href="/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">[笔记]唐珊分享</a>
+            <a href="/2019/01/22/ai%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/">游戏开发中的人工智能part2</a>
           </li>
         
           <li>
-            <a href="/2018/10/22/ai%E7%AC%94%E8%AE%B0/">[笔记]游戏AI</a>
+            <a href="/2019/01/20/%E6%96%87%E6%A1%882/">文案2</a>
           </li>
         
           <li>
-            <a href="/2018/09/22/%E6%B8%B8%E6%88%8F%E8%AF%95%E9%A2%98/">[试题]吉比特</a>
+            <a href="/2018/11/20/%E5%94%90%E7%8F%8A%E5%88%86%E4%BA%AB/">唐珊分享</a>
           </li>
         
           <li>
-            <a href="/2018/08/21/%E5%B8%8C%E6%9C%9B%E4%B8%8D%E9%B8%BD/">[最终]broken</a>
+            <a href="/2018/10/22/ai%E7%AC%94%E8%AE%B0/">游戏开发中的人工智能part1</a>
           </li>
         
       </ul>
@@ -204,15 +204,15 @@
         <div class="nexmoe-post">
   
       <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="[笔记]游戏AI" class="lazyload">
-          <h1>[笔记]游戏AI</h1>
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="游戏开发中的人工智能part1" class="lazyload">
+          <h1>游戏开发中的人工智能part1</h1>
       </div>
   
   
   <div class="nexmoe-post-meta" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年10月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1.3k 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
 </div>
 
   <div class="nexmoe-post-right">
@@ -220,7 +220,7 @@
   </div>
 
   <article>
-    <h1 id="游戏AI策划"><a href="#游戏AI策划" class="headerlink" title="游戏AI策划"></a>游戏AI策划</h1><h4 id="定性AI"><a href="#定性AI" class="headerlink" title="定性AI"></a>定性AI</h4><ul>
+    <h4 id="定性AI"><a href="#定性AI" class="headerlink" title="定性AI"></a>定性AI</h4><ul>
 <li><p>行为或表现是特定的，而且可以预测的，没有不确定性。具体实例可以是简单的追逐算法。比如说塑造一个怪物角色，沿着 XY 坐标轴前进，往某目标点移动，直到该角色的 XY 坐标和目标点的坐标重叠。</p>
 <h4 id="非定性AI"><a href="#非定性AI" class="headerlink" title="非定性AI"></a>非定性AI</h4></li>
 <li><p>某种程度的不确定性，有点不可预测（不确定到什么程度与人们对所采用的的 AI 的方法的理解的难易程度有关）。具体实例是让非玩家角色学习到适应玩家的作战战术。这样的学习能力可以利用神经网络、贝叶斯技术或遗传算法得到。</p>
@@ -296,17 +296,51 @@ entityList[1].BuildPathSegment(x2,y2,a2,b2);
 <li><strong>基本群聚算法的三个规则</strong><ul>
 <li>凝聚：每个单位都往其邻近单位的平均位置行动。</li>
 <li>对齐：每个单位行动时，都要把自己对齐在其邻近单位的平均方向上。</li>
-<li>分割：每个单位行动时，要避免撞上其邻近单位。<br>从这三条语句可以得知，每个单位都必须有比如运用转向力行进的能力。此外，每个单位都必须得知其<strong>局部的周遭情况</strong>，必须知道<strong>邻近单位在哪里、它们的方向如何以及它们和自身有多接近</strong>。</li>
+<li>分割：每个单位行动时，要避免撞上其邻近单位。</li>
 </ul>
 </li>
 </ul>
+<p>从这三条语句可以得知，每个单位都必须有比如运用转向力行进的能力。此外，每个单位都必须得知其<strong>局部的周遭情况</strong>，必须知道<strong>邻近单位在哪里、它们的方向如何以及它们和自身有多接近</strong>。</p>
 <p><img data-sizes="auto" data-src="https://img-blog.csdn.net/20170718132150961?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvSnVyYm8=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="lazyload"></p>
+<p>如图，<strong>弧半径r</strong>较大时会让单位看到群体中更多的伙伴，较小时会让群体分裂。<br><strong>角度theta</strong>量定了每个单位的视野范围，决定了队伍的行进方式（一排蚂蚁或几排几列的军队）。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><em>仿真大约20个单位，以群聚的方式移动，避开圆形的物体，群聚中的诸多单位和玩家的互动就是去追玩家</em></p>
+<h4 id="行进模式"><a href="#行进模式" class="headerlink" title="行进模式"></a>行进模式</h4><p><em>以物理机制为基础，把每个单位视为刚体，在单位前方施加转向力；控制好每条规则贡献的转向力，并调整行进模式，以确保每个单位都获得平衡</em></p>
+<p>影响施加的力的两条规则：</p>
+<ul>
+<li><p><strong>避开规则</strong></p>
+<p>为了让单位不要彼此撞上，且根据对齐规则和凝聚规则而靠在一起，此规则贡献的转向力随距离的增大而减小。</p>
+</li>
+<li><p><strong>对齐规则</strong></p>
+<p>考虑当前单位的当前方向，与其邻近单位间平均方向间的角度。转向力随角度增大而增大。</p>
+<h4 id="邻近单位"><a href="#邻近单位" class="headerlink" title="邻近单位"></a>邻近单位</h4></li>
+</ul>
+<p>   <em>凝聚、对齐、分隔三个规则起作用的前提是侦测每个当前单位的邻近单位。邻近单位就是当前单位视野范围内的单位。</em></p>
+<ul>
+<li><p><code>UpdateSimulation()</code>函数，每次走过游戏循环或仿真运算循环时，就会被调用。<strong>更新每个单位的位置并把每个单位画到画面显示缓冲区内。</strong></p>
+</li>
+<li><p><code>DoUnitAI()</code>函数处理一切和计算机控制单位的移动有关的事。所有群聚规则在此函数内实现。</p>
+<ul>
+<li>宽广视野</li>
+<li>有限视野</li>
+<li>狭窄视野</li>
+</ul>
+</li>
+</ul>
+<h4 id="凝聚"><a href="#凝聚" class="headerlink" title="凝聚"></a>凝聚</h4><p><em>凝聚指的是我们想让所有单位都待在同一个群体中，每个单位都应朝其邻近单位的平均位置前进。</em></p>
+<p>邻近单位平均位置：<strong>各个位置的向量总和再除以总邻近单位数。</strong></p>
+<h4 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h4><p><em>对齐的意思是指，我们想让群聚中的所有单位都大致朝相同方向前进。<br>每个单位在行进时，试着以等同于其邻近单位平均方向的方向来前进。</em></p>
+<h4 id="分隔"><a href="#分隔" class="headerlink" title="分隔"></a>分隔</h4><p><em>每个单位彼此间保持着最小距离，采用分隔手段，让每个单位和其视野内的邻近单位保持某一预定的最小分隔距离。此规则需要逐一检视每个邻近单位，而不是使用平均值。</em></p>
+<h4 id="避开障碍物"><a href="#避开障碍物" class="headerlink" title="避开障碍物"></a>避开障碍物</h4><p><em>提供某种机制，使单位看得到前方的障碍物，再施加适当的转向力，使其能避开路径中的障碍物。</em></p>
+<p>替单位安装<strong>虚拟触角</strong>，或者使用<strong>虚拟体积</strong>。</p>
+<h4 id="跟随领头者"><a href="#跟随领头者" class="headerlink" title="跟随领头者"></a>跟随领头者</h4><p><em>群体移动更有目的性。</em></p>
+<p>根据玩法决定是否有领头者（是否需要分散攻击）。决定领头者后，其他单位采用不同视野使不同队形排成（横、纵队）。</p>
+<p>人人都可能是领头者。<strong>使用简单的规则，找出谁应该或足以担任领头者。</strong></p>
 
   </article>
 
   <div class="nexmoe-post-meta">
     
-        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
     
     
         <a class="nexmoefont icon-tag-fill -link" href="/tags/AI/" rel="tag">AI</a>
@@ -332,7 +366,7 @@ entityList[1].BuildPathSegment(x2,y2,a2,b2);
   </div>
   <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<!--<script src="/js/app.js?v=1584779226002"></script>-->
+<!--<script src="/js/app.js?v=1584800818144"></script>-->
 
 
     <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
