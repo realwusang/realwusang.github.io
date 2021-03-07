@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <title>游戏关卡设计习题和笔记 - realwusang</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="enjoy life">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="1选择你要做的游戏 为游戏做一段描述，就像产品包装背后的说明文字那样，这个游戏就作为你围绕者本书持续进行学习的样本。简单地列出游戏的类别、主题、目标用户以及运行平台，并写一个游戏大纲。如果你要强调游戏的故事和主角，这段描述还应该包含相关的内容。 范例 名称：《陪护者》 类型：第一人称射击 背景：现代-未来 目标用户：青少年 平台：PC 描述：（游戏剧情大纲）  笔记  视角 游戏类型 动作 射击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏关卡设计习题和笔记">
+<meta property="og:url" content="http://realwusang.github.io/2020/02/29/%E6%B8%B8%E6%88%8F%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E4%B9%A0%E9%A2%98/index.html">
+<meta property="og:site_name" content="realwusang">
+<meta property="og:description" content="1选择你要做的游戏 为游戏做一段描述，就像产品包装背后的说明文字那样，这个游戏就作为你围绕者本书持续进行学习的样本。简单地列出游戏的类别、主题、目标用户以及运行平台，并写一个游戏大纲。如果你要强调游戏的故事和主角，这段描述还应该包含相关的内容。 范例 名称：《陪护者》 类型：第一人称射击 背景：现代-未来 目标用户：青少年 平台：PC 描述：（游戏剧情大纲）  笔记  视角 游戏类型 动作 射击">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1549(20210307-225843).PNG?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1550(20210307-225855).PNG?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1551(20210307-225913).PNG?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1552(20210307-225924).PNG?raw=true">
+<meta property="og:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1553(20210307-225934).PNG?raw=true">
+<meta property="article:published_time" content="2020-02-29T08:32:30.000Z">
+<meta property="article:modified_time" content="2021-03-07T15:37:31.654Z">
+<meta property="article:author" content="realwusang">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1549(20210307-225843).PNG?raw=true">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/nexmoe/nexmoe.github.io@latest/css/style.css,npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css" crossorigin>
+  
+  <!--<link rel="stylesheet" href="/css/style.css?v=1615131470531">-->
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="mdui-drawer-body-left">
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="realwusang" class="mdui-btn mdui-btn-icon"><img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="realwusang">
+            <img src="https://s1.ax1x.com/2020/03/21/8RFzDJ.jpg" alt="realwusang" alt="realwusang">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>27</div>
+        <div><span>Tags</span>9</div>
+        <div><span>Categories</span>7</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+        </form>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Categories</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/思考/">思考</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/文案/">文案</a>
+          <span class="category-list-count">2</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/游戏评测/">游戏评测</a>
+          <span class="category-list-count">3</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/游戏试题/">游戏试题</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/笔记/">笔记</a>
+          <span class="category-list-count">4</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/脑洞/">脑洞</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/读书笔记/">读书笔记</a>
+          <span class="category-list-count">12</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Tag Cloud</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 16.67px;">AI</a> <a href="/tags/SLG/" style="font-size: 10px;">SLG</a> <a href="/tags/%E5%88%86%E4%BA%AB%E4%BC%9A/" style="font-size: 10px;">分享会</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6/" style="font-size: 20px;">游戏机制</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E5%88%92/" style="font-size: 10px;">游戏策划</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F/" style="font-size: 13.33px;">游戏系统</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E8%AF%84%E6%B5%8B/" style="font-size: 16.67px;">游戏评测</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E8%AF%95%E9%A2%98/" style="font-size: 10px;">试题</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2089/01/20/%E9%A6%96%E9%A1%B5%E9%80%9A%E7%9F%A5%E4%B9%A6/">永 远 在 首 页</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/29/%E7%A7%91%E5%B9%BB%E5%8F%99%E4%BA%8B/">科幻叙事技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/29/%E6%B8%B8%E6%88%8F%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E4%B9%A0%E9%A2%98/">游戏关卡设计习题和笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/23/SLG%E7%AC%94%E8%AE%B0/">SLG产品的困局与思考笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/%E6%B8%B8%E6%88%8F%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/">《游戏关卡设计》读书笔记part1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2021 realwusang
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" data-sizes="auto" alt="游戏关卡设计习题和笔记" class="lazyload">
+          <h1>游戏关卡设计习题和笔记</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月29日</a>
+    <a><i class="nexmoefont icon-areachart"></i>884 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p><strong>选择你要做的游戏</strong></p>
+<p>为游戏做一段描述，就像产品包装背后的说明文字那样，这个游戏就作为你围绕者本书持续进行学习的样本。简单地列出游戏的类别、主题、目标用户以及运行平台，并写一个游戏大纲。如果你要强调游戏的故事和主角，这段描述还应该包含相关的内容。</p>
+<p><strong>范例</strong></p>
+<p>名称：《陪护者》</p>
+<p>类型：第一人称射击</p>
+<p>背景：现代-未来</p>
+<p>目标用户：青少年</p>
+<p>平台：PC</p>
+<p>描述：（游戏剧情大纲）</p>
+<hr>
+<p><em>笔记</em></p>
+<ul>
+<li>视角</li>
+<li>游戏类型<ul>
+<li>动作<ul>
+<li>射击</li>
+<li>格斗</li>
+<li>战斗模拟</li>
+<li>求生恐怖</li>
+</ul>
+</li>
+<li>冒险<ul>
+<li>情节冒险</li>
+<li>动作冒险</li>
+</ul>
+</li>
+<li>角色扮演<ul>
+<li>制作随机关卡（以空间/组件为基本单位）</li>
+<li>动作RPG</li>
+<li>MMORPG</li>
+</ul>
+</li>
+<li>跳台（卷轴）</li>
+<li>策略</li>
+<li>竞速</li>
+</ul>
+</li>
+<li>游戏主题<ul>
+<li>幻想</li>
+<li>现代</li>
+<li>科幻</li>
+<li>另类现实（如，爱丽丝梦游魔境）</li>
+</ul>
+</li>
+</ul>
+<p>模型、贴图、灯光</p>
+<p>玩家社群分类</p>
+<p>平台</p>
+<hr>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p><strong>设定好玩家行为的框架</strong></p>
+<p>为一个关卡做好基础规划，在后续的练习里持续进行这个关卡的开发。</p>
+<ul>
+<li>列出关卡里所有玩家需要克服的障碍。如果游戏里包含敌人，那么列出关卡中的所有敌人的尺寸、行动方式、攻击方式，并按照它们的强弱顺序整理成表。</li>
+<li>列出关卡中所有能让玩家学会的技能。先列出基本的技能，然后附加上额外的技能，按照学习难度高低整理成表。</li>
+<li>在这些列表的基础上，为本书的练习选择你要设计的关卡类型。</li>
+</ul>
+<hr>
+<p><em>笔记如下：</em></p>
+<ul>
+<li>障碍：道路、敌人、陷阱、谜题</li>
+<li>技能：逐步学习新技能，将技能隔开，组合</li>
+<li>关卡类型：标准关卡（基础）、枢纽区域（过渡）、boss（高潮）、额外奖励/彩蛋</li>
+<li>对玩家的挑战、玩家用来迎接挑战的东西，放置障碍和技能，填充纲要</li>
+</ul>
+<p><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1549(20210307-225843).PNG?raw=true" alt="" class="lazyload"><br><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1550(20210307-225855).PNG?raw=true" alt="" class="lazyload"><br><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1551(20210307-225913).PNG?raw=true" alt="" class="lazyload"><br><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1552(20210307-225924).PNG?raw=true" alt="" class="lazyload"><br><img data-sizes="auto" data-src="https://github.com/realwusang/pictures/blob/master/%E5%9B%BE%E7%89%87/IMG_1553(20210307-225934).PNG?raw=true" alt="" class="lazyload"></p>
+<hr>
+<h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p><strong>开始关卡创意</strong></p>
+<ul>
+<li>选择你要设计的关卡的一个场所，写下一个描述大纲，包括关卡的大小、包括的空间的类型以及你预想的建筑类型。</li>
+<li>收集关卡的参考资料，网络或自己拍照，看关卡位置和主题相关的电影和书。</li>
+<li>制作一个关卡内的地标的列表，指明哪些地标会伴随过场动画或谜题。</li>
+<li>为谜题选择一个可能的区域，写下谜题是关于什么的描述文档。</li>
+<li>为过场动画选择关卡中的一个可能的区域，写下在动画里会发生什么的描述文档。</li>
+</ul>
+<hr>
+<p><em>笔记</em></p>
+<hr>
+<h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><p><strong>布置你的关卡</strong></p>
+<ul>
+<li>创建一个关卡内的区域列表并安排它们的先后顺序，决定你的关卡是线性进程还是非线性。</li>
+<li>创建一张关卡内的区域分布图。</li>
+<li>在关卡区域的分布图内增加区域间彼此的连接关系。</li>
+<li>在关卡图里增加标记，标识出所有的技能、障碍、道具和描述文字的标签。</li>
+<li>对应标签来一一描述关卡的每个区域。</li>
+<li>整合资源图表、最终的关卡图、相关描述以及参考素材，为提交关卡做准备。</li>
+</ul>
+<hr>
+<p><em>笔记</em></p>
+<hr>
+<h4 id="5（开始用虚幻引擎）"><a href="#5（开始用虚幻引擎）" class="headerlink" title="5（开始用虚幻引擎）"></a>5（开始用虚幻引擎）</h4><p><strong>创建你的关卡的模板：游戏性元素</strong></p>
+<ul>
+<li>在关卡中创建活动元素，如门、电梯和平台。</li>
+<li>加触发器。</li>
+</ul>
+
+  </article>
+
+  <div class="nexmoe-post-meta">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    
+      
+  <div class="nexmoe-post-copyright">
+    <strong>Author：</strong>realwusang<br>
+    <strong>Link：</strong><a href="http://realwusang.github.io/2020/02/29/%E6%B8%B8%E6%88%8F%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E4%B9%A0%E9%A2%98/" title="http:&#x2F;&#x2F;realwusang.github.io&#x2F;2020&#x2F;02&#x2F;29&#x2F;%E6%B8%B8%E6%88%8F%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E4%B9%A0%E9%A2%98&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;realwusang.github.io&#x2F;2020&#x2F;02&#x2F;29&#x2F;%E6%B8%B8%E6%88%8F%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E4%B9%A0%E9%A2%98&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+    
+  </div>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js,gh/nexmoe/nexmoe.github.io@latest/js/app.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="/js/app.js?v=1615131470533"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+
+
+</body>
+
+</html>
